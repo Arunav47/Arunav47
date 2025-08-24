@@ -40,44 +40,38 @@ No activity tracked
 
 <!--END_SECTION:waka-->
 
----
+<div align="center">
 
-## ​ LeetCode Stats
+<hr/>
+
 ![Leetcode Stats](https://leetcard.jacoblin.cool/ARUNAV3907C?ext=activity)
 
----
+<hr/>
 
-## ​ Contribution & Activity Stats
 ![GitHub Metrics](./metrics.svg)
 
+<hr/>
 
----
-
-## 🗂️ Contribution Graphs
 ![Contribution Graphs](./contributions.svg)
 
----
+<hr/>
 
-## 📏 Lines of Code since "Hello World"
 ![Lines of Code](./loc.svg)
 
----
+<hr/>
 
-## 🛠️ Languages I’ve Used
 ![Languages](./languages.svg)
 
----
+<hr/>
 
-## ⌛ Coding Habits & Activity
 ![Habits](./habits.svg)
 
----
+<hr/>
 
-## 🐱 My GitHub Data
 <!--START_SECTION:metrics-->
 <!--END_SECTION:metrics-->
 
----
+</div>
 
 ## 📫 Connect with Me
 - [LinkedIn](https://www.linkedin.com/in/arunav-borthakur-439017258/)  
