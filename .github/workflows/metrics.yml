@@ -1,35 +1,89 @@
 name: Generate Metrics
 
 on:
-  schedule: [{cron: "0 0 * * *"}]  # runs daily at midnight
-  workflow_dispatch:               # allow manual trigger
+  schedule:
+    - cron: "0 */12 * * *"   # twice a day
+  workflow_dispatch:         # allow manual run
 
 jobs:
-  github-metrics:
+  # ---------------- Contribution & Activity ----------------
+  activity:
     runs-on: ubuntu-latest
     steps:
       - uses: lowlighter/metrics@latest
         with:
-          # Where metrics output goes
-          filename: metrics.svg
+          filename: activity.svg
           token: ${{ secrets.METRICS_TOKEN }}
+          base: header, activity, repositories
+          config_timezone: Asia/Kolkata
+          config_display: compact
 
-          # Base sections
-          base: header, activity, community, repositories, metadata
-
-          # 🟢 Contribution & Activity Stats
+  # ---------------- Contribution Graphs ----------------
+  contributions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          filename: contributions.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
           plugin_isocalendar: yes
           plugin_isocalendar_duration: full-year
+          config_timezone: Asia/Kolkata
 
-          # 🟢 Contribution Graphs (commits per day/hour)
+  # ---------------- Lines of Code (LOC) ----------------
+  loc:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          filename: loc.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          plugin_lines: yes
+          config_timezone: Asia/Kolkata
+
+  # ---------------- Languages Used (with progress bars) ----------------
+  languages:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          filename: languages.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          plugin_languages: yes
+          plugin_languages_ignored: html, css, scss
+          plugin_languages_sections: most-used
+          plugin_languages_details: percentage
+          plugin_languages_limit: 8
+          config_timezone: Asia/Kolkata
+
+  # ---------------- Coding Habits ----------------
+  habits:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          filename: habits.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
           plugin_habits: yes
           plugin_habits_facts: yes
           plugin_habits_charts: yes
+          config_timezone: Asia/Kolkata
 
-          # 🟢 Lines of Code (LOC added/removed)
-          plugin_lines: yes
-
-          # 🟢 LeetCode Stats
+  # ---------------- LeetCode Stats ----------------
+  leetcode:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          filename: leetcode.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
           plugin_leetcode: yes
+          plugin_leetcode_user: Arunav47
           plugin_leetcode_sections: solved, skills, recent
-          plugin_leetcode_user: ARUNAV3907C
+          plugin_leetcode_limit_recent: 5
+          config_timezone: Asia/Kolkata
