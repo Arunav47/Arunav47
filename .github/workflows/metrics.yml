@@ -38,7 +38,7 @@ jobs:
       - name: Update GitHub Activity Section
         uses: jamesgeorge007/github-activity-readme@master
         with:
-          GH_TOKEN: ${{ secrets.METRICS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Commit changes
         run: |
