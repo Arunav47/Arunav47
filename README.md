@@ -1,4 +1,4 @@
-<div align="center">
+<div align="left">
 
 # Just a Geek Having Fun with Code 🤓
 💻 Aspiring Software Developer on a mission to turn caffeine into code and ideas into reality. <br>
