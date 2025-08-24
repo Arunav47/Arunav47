@@ -21,25 +21,26 @@
 
 ---
 
-## ⚡ Recent Activity
+## ​ Recent Activity
 <!--START_SECTION:activity-->
 <!--END_SECTION:activity-->
 
 ---
 
-## 📊 This Week I Spent My Time On
+## ​ This Week I Spent My Time On
 <!--START_SECTION:waka-->
 <!--END_SECTION:waka-->
 
 ---
 
-## 🏆 LeetCode Stats
-![LeetCode Stats](./leetcode.svg)
+## ​ LeetCode Stats
+[![LeetCode Stats](https://leetcode-stats-six.vercel.app/api?username=ARUNAV3907c&theme=dark&show_icons=true)](https://leetcode.com/ARUNAV3907C)
 
 ---
 
-## 📊 Contribution & Activity Stats
-![Activity Stats](./activity.svg)
+## ​ Contribution & Activity Stats
+![GitHub Metrics](./metrics.svg)
+
 
 ---
 
