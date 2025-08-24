@@ -83,7 +83,7 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           base: ""
           plugin_leetcode: yes
-          plugin_leetcode_user: Arunav47
+          plugin_leetcode_user: ARUNAV3907C
           plugin_leetcode_sections: solved, skills, recent
           plugin_leetcode_limit_recent: 5
           config_timezone: Asia/Kolkata
