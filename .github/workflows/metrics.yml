@@ -55,6 +55,14 @@ jobs:
           BLOCKS: ░▒▓█
           SHOW_TIME: true
           SHOW_TOTAL: true
+      # ---------------------------
+      # 4. Update Recent GitHub Activity
+      # ---------------------------
+      - name: GitHub Activity in Readme
+        uses: jamesgeorge007/github-activity-readme@master
+        with:
+          GH_TOKEN: ${{ secrets.METRICS_TOKEN }}
+
 
       # ---------------------------
       # 3. Generate LeetCode Stats
