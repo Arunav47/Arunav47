@@ -22,7 +22,7 @@
 ---
 
 ## 📊 Contribution & Activity Stats
-![Metrics](./metrics.svg)
+![Metrics](.github/workflows/metrics.svg)
 
 ---
 
