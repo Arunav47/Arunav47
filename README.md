@@ -21,6 +21,23 @@
 
 ---
 
+## ⚡ Recent Activity
+<!--START_SECTION:activity-->
+<!--END_SECTION:activity-->
+
+---
+
+## 📊 This Week I Spent My Time On
+<!--START_SECTION:waka-->
+<!--END_SECTION:waka-->
+
+---
+
+## 🏆 LeetCode Stats
+![LeetCode Stats](./leetcode.svg)
+
+---
+
 ## 📊 Contribution & Activity Stats
 ![Activity Stats](./activity.svg)
 
@@ -46,8 +63,9 @@
 
 ---
 
-## 🏆 LeetCode Stats
-![LeetCode Stats](./leetcode.svg)
+## 🐱 My GitHub Data
+<!--START_SECTION:metrics-->
+<!--END_SECTION:metrics-->
 
 ---
 
@@ -55,4 +73,3 @@
 - [LinkedIn](https://www.linkedin.com/in/arunav-borthakur-439017258/)  
 - [Twitter](https://www.facebook.com/profile.php?id=100088079942625)  
 - [Mail at](mailto:arunavborthakur2020@egmail.com)  
-
