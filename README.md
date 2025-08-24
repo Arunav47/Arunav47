@@ -21,7 +21,8 @@
 
 ---
 
-
+## 📊 Contribution & Activity Stats
+![Metrics](./metrics.svg)
 
 ---
 

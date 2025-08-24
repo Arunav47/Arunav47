@@ -1,0 +1,35 @@
+name: Generate Metrics
+
+on:
+  schedule: [{cron: "0 0 * * *"}]  # runs daily at midnight
+  workflow_dispatch:               # allow manual trigger
+
+jobs:
+  github-metrics:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          # Where metrics output goes
+          filename: metrics.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+
+          # Base sections
+          base: header, activity, community, repositories, metadata
+
+          # 🟢 Contribution & Activity Stats
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: full-year
+
+          # 🟢 Contribution Graphs (commits per day/hour)
+          plugin_habits: yes
+          plugin_habits_facts: yes
+          plugin_habits_charts: yes
+
+          # 🟢 Lines of Code (LOC added/removed)
+          plugin_lines: yes
+
+          # 🟢 LeetCode Stats
+          plugin_leetcode: yes
+          plugin_leetcode_sections: solved, skills, recent
+          plugin_leetcode_user: Arunav47
