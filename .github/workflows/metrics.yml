@@ -1,87 +1,49 @@
-name: Profile Stats
+name: Update Profile
 
 on:
   schedule:
-    - cron: "0 * * * *" # runs every hour
+    - cron: "0 * * * *"   # every hour
   workflow_dispatch:
 
 jobs:
-  build:
+  update:
     runs-on: ubuntu-latest
     steps:
-      # Checkout repo
       - name: Checkout
         uses: actions/checkout@v3
 
-      # ---------------------------
-      # 1. Generate GitHub Metrics
-      # ---------------------------
-      - name: Generate Metrics
+      - name: Update GitHub Metrics (SVG)
         uses: lowlighter/metrics@latest
         with:
           filename: metrics.svg
           token: ${{ secrets.METRICS_TOKEN }}
-          base: header, activity, community, repositories, metadata
           config_timezone: Asia/Kolkata
+          base: header, activity, community, repositories, metadata
           plugin_isocalendar: yes
           plugin_languages: yes
           plugin_lines: yes
           plugin_habits: yes
-          plugin_habits_charts: yes
           plugin_contributors: yes
-          plugin_achievements: yes
-          plugin_achievements_threshold: C
-          plugin_followup: yes
-          plugin_repositories: yes
-          plugin_code: yes
-          plugin_code_languages: c++, python, dart, javascript, java, go
-          plugin_code_lines: yes
-          plugin_wakatime: yes
-          plugin_wakatime_token: ${{ secrets.WAKATIME_API_KEY }}
-          plugin_wakatime_sections: time, projects, languages, editors, os
-          plugin_wakatime_days: 7
-          plugin_wakatime_limit: 5
 
-      # ---------------------------
-      # 2. Generate WakaTime ASCII
-      # ---------------------------
-      - name: WakaTime Readme
+      - name: Update WakaTime Section
         uses: athul/waka-readme@master
         with:
           WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
           SHOW_TITLE: true
           TIME_RANGE: last_7_days
           LANG_COUNT: 5
-          BLOCKS: ░▒▓█
           SHOW_TIME: true
           SHOW_TOTAL: true
-      # ---------------------------
-      # 4. Update Recent GitHub Activity
-      # ---------------------------
-      - name: GitHub Activity in Readme
+
+      - name: Update GitHub Activity Section
         uses: jamesgeorge007/github-activity-readme@master
         with:
           GH_TOKEN: ${{ secrets.METRICS_TOKEN }}
 
-
-      # ---------------------------
-      # 3. Generate LeetCode Stats
-      # ---------------------------
-      - name: Generate LeetCode Stats
-        uses: KnlnKS/leetcode-stats@master
-        with:
-          username: ARUNAV3907C
-          theme: dark
-          border: true
-          filepath: leetcode.svg
-
-      # ---------------------------
-      # 4. Commit & Push changes
-      # ---------------------------
       - name: Commit changes
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add .
-          git commit -m "Updated profile stats" || exit 0
+          git commit -m "Auto-update profile stats" || exit 0
           git push
