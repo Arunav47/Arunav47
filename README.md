@@ -22,7 +22,32 @@
 ---
 
 ## 📊 Contribution & Activity Stats
-![Metrics](./metrics.svg)
+![Activity Stats](./activity.svg)
+
+---
+
+## 🗂️ Contribution Graphs
+![Contribution Graphs](./contributions.svg)
+
+---
+
+## 📏 Lines of Code since "Hello World"
+![Lines of Code](./loc.svg)
+
+---
+
+## 🛠️ Languages I’ve Used
+![Languages](./languages.svg)
+
+---
+
+## ⌛ Coding Habits & Activity
+![Habits](./habits.svg)
+
+---
+
+## 🏆 LeetCode Stats
+![LeetCode Stats](./leetcode.svg)
 
 ---
 
