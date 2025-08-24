@@ -36,9 +36,6 @@ jobs:
           plugin_code: yes
           plugin_code_languages: c++, python, dart, javascript, java, go
           plugin_code_lines: yes
-          plugin_leetcode: yes
-          plugin_leetcode_sections: solved, skills, recent
-          plugin_leetcode_user: Arunav47
           plugin_wakatime: yes
           plugin_wakatime_token: ${{ secrets.WAKATIME_API_KEY }}
           plugin_wakatime_sections: time, projects, languages, editors, os
@@ -60,7 +57,18 @@ jobs:
           SHOW_TOTAL: true
 
       # ---------------------------
-      # 3. Commit & Push changes
+      # 3. Generate LeetCode Stats
+      # ---------------------------
+      - name: Generate LeetCode Stats
+        uses: KnlnKS/leetcode-stats@master
+        with:
+          username: ARUNAV3907C
+          theme: dark
+          border: true
+          filepath: leetcode.svg
+
+      # ---------------------------
+      # 4. Commit & Push changes
       # ---------------------------
       - name: Commit changes
         run: |
