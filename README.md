@@ -43,7 +43,7 @@ No activity tracked
 ---
 
 ## ​ LeetCode Stats
-[![LeetCode Stats](https://leetcode-stats-six.vercel.app/api?username=ARUNAV3907c&theme=dark&show_icons=true)](https://leetcode.com/ARUNAV3907C)
+![Leetcode Stats](https://leetcard.jacoblin.cool/ARUNAV3907C?ext=activity)
 
 ---
 
