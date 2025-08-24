@@ -32,4 +32,4 @@ jobs:
           # 🟢 LeetCode Stats
           plugin_leetcode: yes
           plugin_leetcode_sections: solved, skills, recent
-          plugin_leetcode_user: Arunav47
+          plugin_leetcode_user: ARUNAV3907C
